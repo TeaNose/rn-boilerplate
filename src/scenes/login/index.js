@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 
 import {
     Text,
@@ -7,9 +7,9 @@ import {
 
 const login = ({navigation}) => {
     return (
-        <View>
+        <SafeAreaView>
             <Text onPress={() => navigation.navigate('App')}>This is Login Page.</Text>
-        </View>
+        </SafeAreaView>
     );
 };
 

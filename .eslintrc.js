@@ -17,9 +17,10 @@ module.exports = {
 					_services: './src/services',
 					_styles: './src/styles',
 					_utils: './src/utils',
-					_actions-types:'./src/constants/action-types',
+					_action-types:'./src/constants/action-types',
 					_endpoints:'./src/constants/endpoints',
-					_actions:'./src/actions'
+					_actions:'./src/actions',
+					_reducers:'./src/reducers'
 				},
 			},
 		},

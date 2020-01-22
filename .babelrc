@@ -4,22 +4,29 @@
 			"module-resolver",
 			{
 				"cwd": "babelrc",
-				"root": ["./src"],
-				"extensions":[".js",".ios.js",".android.js"],
+				"root": [
+					"./src"
+				],
+				"extensions": [
+					".js",
+					".ios.js",
+					".android.js"
+				],
 				"alias": {
-					"_assets":"./src/assets",
-					"_components":"./src/components",
-					"_atoms":"./src/components/atoms",
-					"_molecules":"./src/components/molecules",
-					"_organisms":"./src/components/organisms",
-					"_navigations":"./src/navigations",
-					"_scenes":"./src/scenes",
-					"_services":"./src/services",
-					"_styles":"./src/styles",
-					"_utils":"./src/utils",
-					"_actions-types":"./src/constants/action-types",
-					"_endpoints":"./src/constants/endpoints",
-					"_actions":"./src/actions"
+					"_assets": "./src/assets",
+					"_components": "./src/components",
+					"_atoms": "./src/components/atoms",
+					"_molecules": "./src/components/molecules",
+					"_organisms": "./src/components/organisms",
+					"_navigations": "./src/navigations",
+					"_scenes": "./src/scenes",
+					"_services": "./src/services",
+					"_styles": "./src/styles",
+					"_utils": "./src/utils",
+					"_action-types": "./src/constants/action-types",
+					"_endpoints": "./src/constants/endpoints",
+					"_actions": "./src/actions",
+					"_reducers": "./src/reducers"
 				}
 			}
 		]

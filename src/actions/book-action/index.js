@@ -1,4 +1,4 @@
-import * as ActionTypes from '_actions-types';
+import * as ActionTypes from '_action-types';
 import {
     GET_BOOK_LIST,
 } from '_endpoints';
@@ -14,13 +14,15 @@ export const getBookListRequest = () => ({
     type: ActionTypes.GET_BOOK_LIST_REQUEST,
 });
 
-export const getBookListSuccess = (data: Array<*>) => ({
+export const getBookListSuccess = (data) => ({
     type: ActionTypes.GET_BOOK_LIST_SUCCESS,
     data,
 });
 
-export const getBookList = () => {
+export const getBookList = (dispatch) => {
+    dispatch(getBookListRequest());
     callGetApi(GET_BOOK_LIST).then((data) => {
-        console.log('response data: '+JSON.stringify(data));
+        dispatch(getBookListSuccess(data.results.books))
     })
+    .catch(error => dispatch(getBookListError()))
 };

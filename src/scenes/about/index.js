@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 
 import {
     Text,
@@ -7,9 +7,9 @@ import {
 
 const about = () => {
     return (
-        <View>
+        <SafeAreaView>
             <Text>This is About Page.</Text>
-        </View>
+        </SafeAreaView>
     );
 };
 

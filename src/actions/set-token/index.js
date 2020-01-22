@@ -1,4 +1,4 @@
-import * as ActionTypes from '_actions-types';
+import * as ActionTypes from '_action-types';
 
 export const setToken = (token: ?string) => ({
   type: ActionTypes.SET_TOKEN,
