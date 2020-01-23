@@ -43,7 +43,7 @@ export const callPostApi = (url, params, authToken) => {
   });
 };
 
-export const callGetApi = (url, params, authToken) => {
+export const callGetApi = url => {
   return new Promise((resolve, reject) => {
     const params = {
       'api-key': Config.API_KEY,

@@ -1,47 +1,10 @@
 // @flow
 import React from 'react';
 import {Text as TextNative} from 'react-native';
-import styles from '_styles/typography.js';
+import PropTypes from 'prop-types';
+import styles from '_styles/typography';
 
-export type TextVariant =
-  | 'bigbold1'
-  | 'bigregular1'
-  | 'bigregular2'
-  | 'medium1'
-  | 'bold1'
-  | 'headline1'
-  | 'headline2'
-  | 'headline3'
-  | 'headline4'
-  | 'bodytext1'
-  | 'bodytext2'
-  | 'bottomnavbar'
-  | 'textprice1'
-  | 'textprice2'
-  | 'textprice3'
-  | 'discountPrice'
-  | 'highlightText1'
-  | 'highlightText2'
-  | 'highlightText3'
-  | 'highlightText4'
-  | 'highlightText5'
-  | 'regular1'
-  | 'confirmationText'
-  | 'errorText'
-  | 'smallNoteText';
-
-type Props = {
-  variant?: TextVariant,
-  children: any,
-  style?: any,
-  color?: string,
-  fontFamily?: string,
-  fontSize?: number,
-  props?: any,
-  testID?: string,
-};
-
-const getStyleVariant = (variant?: TextVariant) => {
+const getStyleVariant = variant => {
   switch (variant) {
     case 'bigbold1':
       return styles.bigbold1;
@@ -98,24 +61,24 @@ const getStyleVariant = (variant?: TextVariant) => {
   }
 };
 
-function Text({
-  variant,
-  children,
-  onPress,
-}: Props) {
+function Text({variant, children, onPress}) {
   const styleVariant = getStyleVariant(variant);
   return (
-    <TextNative
-      onPress={onPress}
-      style={[styleVariant]}>
+    <TextNative onPress={onPress} style={[styleVariant]}>
       {children}
     </TextNative>
   );
 }
 
-Text.defaultProps = {
-  variant: 'bodytext1',
-  color: 'red',
+Text.propTypes = {
+  variant: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  onPress: PropTypes.func,
 };
 
-export default React.memo<Props>(Text);
+Text.defaultProps = {
+  variant: 'bodytext1',
+  onPress: () => {},
+};
+
+export default Text;
