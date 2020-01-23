@@ -1,28 +1,25 @@
 import * as ActionTypes from '_action-types';
-import {
-    GET_BOOK_LIST,
-} from '_endpoints';
-import {
-    callGetApi,
-} from '_utils';
+import {GET_BOOK_LIST} from '_endpoints';
+import {callGetApi} from '_utils';
 
 export const getBookListError = () => ({
-    type: ActionTypes.GET_BOOK_LIST_ERROR,
+  type: ActionTypes.GET_BOOK_LIST_ERROR,
 });
 
 export const getBookListRequest = () => ({
-    type: ActionTypes.GET_BOOK_LIST_REQUEST,
+  type: ActionTypes.GET_BOOK_LIST_REQUEST,
 });
 
-export const getBookListSuccess = (data) => ({
-    type: ActionTypes.GET_BOOK_LIST_SUCCESS,
-    data,
+export const getBookListSuccess = data => ({
+  type: ActionTypes.GET_BOOK_LIST_SUCCESS,
+  data,
 });
 
-export const getBookList = (dispatch) => {
-    dispatch(getBookListRequest());
-    callGetApi(GET_BOOK_LIST).then((data) => {
-        dispatch(getBookListSuccess(data.results.books))
+export const getBookList = dispatch => {
+  dispatch(getBookListRequest());
+  callGetApi(GET_BOOK_LIST)
+    .then(data => {
+      dispatch(getBookListSuccess(data.results.books));
     })
-    .catch(error => dispatch(getBookListError()))
+    .catch(() => dispatch(getBookListError()));
 };

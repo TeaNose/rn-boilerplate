@@ -1,28 +1,38 @@
 module.exports = {
-  root: true,
-  extends: '@react-native-community',
-  plugins: ['import'],
+	root: true,
+	extends: ['airbnb', 'prettier', 'prettier/react'],
+	plugins: [
+		'react',
+		'jsx-a11y',
+		'import',
+		'eslint-plugin-prettier',
+		'eslint-plugin-react'
+	],
 	settings: {
 		'import/resolver': {
-			node: {
-				paths: ['src'],
-				alias: {
-					_assets: './src/assets',
-					_components: './src/components',
-					_atoms: './src/components/atoms',
-					_molecules: './src/components/molecules',
-					_organisms: './src/components/organisms',
-					_navigations: './src/navigations',
-					_scenes: './src/scenes',
-					_services: './src/services',
-					_styles: './src/styles',
-					_utils: './src/utils',
-					_action-types:'./src/constants/action-types',
-					_endpoints:'./src/constants/endpoints',
-					_actions:'./src/actions',
-					_reducers:'./src/reducers'
-				},
-			},
+			"babel-module": {}
 		},
+	},
+	rules: {
+		"react/jsx-filename-extension": [
+			1,
+			{
+				extensions: [
+					".js",
+					".jsx"
+				]
+			}
+		],
+		"prettier/prettier": [
+			"error",
+			{
+				trailingComma: "es5",
+				singleQuote: true,
+				printWidth: 100,
+				jsxSingleQuote: false,
+				semi: true,
+				jsxBracketSameLine: true
+			}
+		]
 	},
 };
